@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function App() {
   let time = new Date().toLocaleTimeString();
+
   function tConvert(time) {
     // Check correct time format and split into components
     time = time
@@ -17,9 +18,11 @@ function App() {
     return time.join(""); // return adjusted time or original string
   }
 
-  tConvert("18:00:00");
+  let times=tConvert(time);
+  
 
-  let [count, setcount] = useState(time);
+
+  let [count, setcount] = useState(times);
 
   function currenttime() {
     let updtime = new Date().toLocaleTimeString();
@@ -37,6 +40,7 @@ function App() {
       <button onClick={currenttime}>Get Time</button>
       <button onClick={stopwatch}>stop watch</button>
       <p>@ santhosh kumar</p>
+     
     </div>
   );
 }
