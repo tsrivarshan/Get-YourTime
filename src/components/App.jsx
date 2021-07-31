@@ -25,11 +25,13 @@ function App() {
   let [count, setcount] = useState(times);
 
   function currenttime() {
-    let updtime = new Date().toLocaleTimeString();
+    let x = new Date().toLocaleTimeString();
+    let updtime=tConvert(x);
     setcount(updtime);
   }
   function stopwatch() {
-    let updtime = new Date().toLocaleTimeString();
+    let y = new Date().toLocaleTimeString();   
+    let updtime=tConvert(y);
     setcount(updtime);
     setInterval(currenttime, 1000);
   }
