@@ -22,25 +22,29 @@ function App() {
   
 
 
-  let [count, setcount] = useState(times);
+  let [count, setcount] = useState("Get-Time");
 
   function currenttime() {
     let x = new Date().toLocaleTimeString();
     let updtime=tConvert(x);
     setcount(updtime);
   }
+  
   function stopwatch() {
     let y = new Date().toLocaleTimeString();   
     let updtime=tConvert(y);
     setcount(updtime);
-    setInterval(currenttime, 1000);
+   setInterval(currenttime, 1000);
   }
+
+
 
   return (
     <div className="container">
-      <h2 className="time">{count}</h2>
+      <h2 className="tit">{count}</h2>
       <button onClick={currenttime}>Get Time</button>
-      <button onClick={stopwatch}>stop watch</button>
+      
+      <button onClick={stopwatch}>stop watch </button>
       <p>@ santhosh kumar</p>
      
     </div>
